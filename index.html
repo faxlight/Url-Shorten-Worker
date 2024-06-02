@@ -13,31 +13,31 @@
 <body>
   <div class="d-flex align-items-start flex-wrap">
   <div class="card shadow m-3">
-    <h5 class="card-header">中文测试</h5>
+    <h5 class="card-header">短连接_由Cloudflare KV创建</h5>
     <div class="card-body">
       <h5 class="card-title"> </h5>
 
       <div class="input-group mb-3">
 
-          <span class="input-group-text" id="basic-addon1">Long URL</span>
+          <span class="input-group-text" id="basic-addon1">长链接</span>
 
-        <input type="text" class="form-control" id="longURL" aria-describedby="basic-addon1" placeholder="Example: https://example.com/" oninput="loadUrlList()">
+        <input type="text" class="form-control" id="longURL" aria-describedby="basic-addon1" placeholder="例如: https://example.com/" oninput="loadUrlList()">
       </div>
 
       <div class="input-group mb-3">
 
-          <span class="input-group-text" id="basic-addon2">Custom Short URL</span>
+          <span class="input-group-text" id="basic-addon2">自定义短链接</span>
 
-        <input type="text" class="form-control" id="keyPhrase" aria-describedby="basic-addon2" placeholder="As you wish">
+        <input type="text" class="form-control" id="keyPhrase" aria-describedby="basic-addon2" placeholder="啥玩意都行">
       </div>
 
       <div class="input-group mb-3">
-        <button class="btn btn-primary" type="button" onclick='shorturl()' id="addBtn">Shorten it</button>
+        <button class="btn btn-primary" type="button" onclick='shorturl()' id="addBtn">缩短链接</button>
       </div>
 
       <div class="input-group mb-3">
 
-          <span class="input-group-text" id="basic-addon3">password</span>
+          <span class="input-group-text" id="basic-addon3">密钥(无视即可)</span>
 
         <input class="form-control" type="text" value="__PASSWORD__" readonly="true" id="passwordText" aria-describedby="basic-addon3">
       </div>
@@ -45,18 +45,18 @@
     </div>
     
     <div class="card-footer">
-      <span> <a href="https://github.com/crazypeace/Url-Shorten-Worker/" target="_self">Fork me on GitHub</a> </span>
+      <span> <a href="https://github.com/crazypeace/Url-Shorten-Worker/" target="_self">原作者仓库</a> </span>
     </div>
   </div>
 
   <div class="card shadow m-3">
-    <h5 class="card-header">LocalStorage List</h5>
+    <h5 class="card-header">本地存储列表</h5>
     <div class="card-body">
       <h5 class="card-title"> </h5>
       <div class="input-group mb-3">
-        <button class="btn btn-success" type="button" onclick='loadUrlList()' id="loadListBtn">load localStorage</button>
-        <button class="btn btn-danger" type="button" onclick='clearLocalStorage()' id="clearlocalStgBtn">clear localStorage</button>
-        <button class="btn btn-info" type="button" onclick='loadKV()' id="loadKV2localStgBtn">load KV to localStorage</button>
+        <button class="btn btn-success" type="button" onclick='loadUrlList()' id="loadListBtn">加载本地存储列表</button>
+        <button class="btn btn-danger" type="button" onclick='clearLocalStorage()' id="clearlocalStgBtn">清理本地存储列表</button>
+        <button class="btn btn-info" type="button" onclick='loadKV()' id="loadKV2localStgBtn">加载KV空间内容存储至本地列表</button>
       </div>
 
       <div class="card-text">
@@ -81,13 +81,13 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="resultModalLabel">Result</h5>
+          <h5 class="modal-title" id="resultModalLabel">输出</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body" id="result">No result</div>
+        <div class="modal-body" id="result">无法输出</div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary" onclick='copyurl("result")' data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Copied!">Copy</button>
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick='copyurl("result")' data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Copied!">复制</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
         </div>
       </div>
     </div>
