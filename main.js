@@ -4,8 +4,6 @@ let apiSrv = window.location.pathname
 let password_value = document.querySelector("#passwordText").value
 // let apiSrv = "https://journal.crazypeace.workers.dev"
 // let password_value = "journaljournal"
-
-// 这是默认行为, 在不同的index.html中可以设置为不同的行为
 // This is default, you can define it to different funciton in different theme index.html
 let buildValueItemFunc = buildValueTxt
 
@@ -15,7 +13,6 @@ function shorturl() {
     return
   }
   
-  // 短链中不能有空格
   // key can't have space in it
   document.getElementById('keyPhrase').value = document.getElementById('keyPhrase').value.replace(/\s/g, "-");
 
@@ -30,7 +27,7 @@ function shorturl() {
   }).then(function (myJson) {
     res = myJson;
     document.getElementById("addBtn").disabled = false;
-    document.getElementById("addBtn").innerHTML = 'Shorten it';
+    document.getElementById("addBtn").innerHTML = '缩短链接';
 
     // 成功生成短链 Succeed
     if (res.status == "200") {
@@ -54,7 +51,7 @@ function shorturl() {
     alert("Unknow error. Please retry!");
     console.log(err);
     document.getElementById("addBtn").disabled = false;
-    document.getElementById("addBtn").innerHTML = 'Shorten it';
+    document.getElementById("addBtn").innerHTML = '缩短链接';
   })
 }
 
@@ -83,9 +80,9 @@ function copyurl(id, attr) {
     window.getSelection().addRange(range);
     document.execCommand('copy');
     window.getSelection().removeAllRanges();
-    // console.log('Copy success')
+   // console.log('Copy success')
   } catch (e) {
-    console.log('Copy error')
+    console.log('复制出错!')
   }
 
   if (attr) {
@@ -204,7 +201,7 @@ function deleteShortUrl(delKeyPhrase) {
       // 加载localStorage
       loadUrlList()
 
-      document.getElementById("result").innerHTML = "Delete Successful"
+      document.getElementById("result").innerHTML = "删除成功"
     } else {
       document.getElementById("result").innerHTML = res.error;
     }
